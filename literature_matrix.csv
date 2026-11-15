@@ -1,0 +1,7 @@
+paper_id,authors_year,title,problem_and_event,info_used_before_stopping,guarantee_assumptions,data_baselines_costs,diff_from_thesis,must_compare,implementation_available,read_date,decision_taken
+R6,"Xiao et al., 2026","Confidence-Bound Early Stopping of Experiments with Sequential Calibration","","","","","","Yes","Yes (https://github.com/IroayX/CBES)","",""
+R10,"Eldan & Li, 2023","TinyStories: How Small Can Language Models Be and Still Speak Coherent English?","","","","","","N/A (Dataset)","Yes (roneneldan/TinyStories)","",""
+R1,"Li et al., 2018","Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization","","","","","","Yes (via Successive Halving)","Yes","",""
+R17,"Loshchilov & Hutter, 2019","Decoupled Weight Decay Regularization","","","","","","N/A (Optimizer)","Yes (Optax)","",""
+R12,"Adriaensen et al., 2023","Efficient Bayesian Learning Curve Extrapolation using Prior-Data Fitted Networks","","","","","","Yes","Yes","",""
+R13,"Luo et al., ICLR 2025","A Multi-Power Law for Loss Curve Prediction Across Learning Rate Schedules","","","","","","Yes (Feature/Baseline)","Check repo","",""

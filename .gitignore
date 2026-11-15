@@ -1,0 +1,10 @@
+# Keep raw text and large checkpoints outside Git
+data/raw/
+checkpoints/
+*.npy
+*.npz
+*.msgpack
+*.safetensors
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
