@@ -31,14 +31,14 @@ This repository implements a reproducible research pipeline to test whether **sc
 
 All core experiments isolate training-recipe variables by locking the model architecture, tokenizer, data stream, and training horizon:
 
-| Component              | Locked Specification                                                                                                                                                       |
-| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Model Architecture** | **5.31M** parameter Llama-like decoder (`5,310,720` exact): 4 layers, width `256`, 8 heads, SwiGLU (`704`), RoPE, RMSNorm, tied embeddings                                 |
-| **Dataset & Splits**   | `roneneldan/TinyStories` (pinned rev `f54c09fd`), deduplicated into disjoint **Train** (`1.80M` docs), **Monitor** (`7,555` docs), and **Audit** (`7,834` docs)            |
-| **Tokenizer**          | Custom 8,192-token SentencePiece BPE trained strictly on `10 MB` of training text (`SHA256: cb39a3fa...`)                                                                  |
-| **Training Horizon**   | Fixed **2,048 updates** (`33.55M` target tokens; effective batch `64 × 256`), AdamW ($\beta_1=0.9, \beta_2=0.95$), FP32                                                    |
-| **Decision Grid**      | Monitor evaluation every `128` steps; irreversible pruning allowed only at updates **`{256, 512, 1024, 1536}`**[cite: 1]                                                   |
-| **Search Space**       | Peak LR $\sim \text{LogUniform}[10^{-4}, 2\times 10^{-3}]$, Warmup $\in \{2\%, 8\%\}$, Decay $\in \{\text{Cosine } 10\%, \text{Linear } 0\}$, WD $\in \{0, 0.1\}$[cite: 1] |
+| Component              | Locked Specification                                                                                                                                            |
+| :--------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Model Architecture** | **5.31M** parameter Llama-like decoder (`5,310,720` exact): 4 layers, width `256`, 8 heads, SwiGLU (`704`), RoPE, RMSNorm, tied embeddings                      |
+| **Dataset & Splits**   | `roneneldan/TinyStories` (pinned rev `f54c09fd`), deduplicated into disjoint **Train** (`1.80M` docs), **Monitor** (`7,555` docs), and **Audit** (`7,834` docs) |
+| **Tokenizer**          | Custom 8,192-token SentencePiece BPE trained strictly on `10 MB` of training text                                                                               |
+| **Training Horizon**   | Fixed **2,048 updates** (`33.55M` target tokens; effective batch `64 × 256`), AdamW (`β₁ = 0.9, β₂ = 0.95`), FP32                                               |
+| **Decision Grid**      | Monitor evaluation every `128` steps; irreversible pruning allowed only at updates `{256, 512, 1024, 1536}`                                                     |
+| **Search Space**       | Peak LR ~ `LogUniform[1e-4, 2e-3]`, Warmup ∈ `{2%, 8%}`, Decay ∈ `{Cosine 10%, Linear 0}`, WD ∈ `{0, 0.1}`                                                      |
 
 ```text
 [Pinned TinyStories] ──► [Deduplicated Splits + 8k BPE] ──► [5.31M Llama-JAX Trajectories (2,048 steps)]
