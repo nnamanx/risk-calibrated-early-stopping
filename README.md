@@ -15,7 +15,7 @@
 
 ## Overview
 
-Searching over language-model training recipes (peak learning rate, warmup duration, decay schedule, and weight decay) is expensive, yet standard early-stopping heuristics frequently eliminate **late-blooming winners**—recipes with longer warmups or late-dropping cosine schedules that look suboptimal early on.
+Searching over language-model training recipes (peak learning rate, warmup duration, decay schedule, and weight decay) is expensive, yet standard early-stopping heuristics frequently eliminate **late-blooming winners**; recipes with longer warmups or late-dropping cosine schedules that look suboptimal early on.
 
 This repository implements a reproducible research pipeline to test whether **schedule-aware final-loss prediction** paired with **trajectory- and pool-calibrated conformal lower bounds** can cut recipe-search compute while keeping the probability of eliminating the eventual best recipe below a user-specified risk target ($\alpha = 0.10$).
 
