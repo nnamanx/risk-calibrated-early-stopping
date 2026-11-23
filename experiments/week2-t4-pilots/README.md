@@ -2,6 +2,8 @@
 
 This experiment ran 12 training recipes for 2,048 updates each on a Tesla T4.
 
+See [pilot results](RESULTS.md) for the findings and their implications for early stopping.
+
 - `configs/` contains the 12 recipes.
 - `results/` contains each run's metadata, step-by-step metrics, and final summary.
 - The dataset manifest records the inputs used for the experiment.
