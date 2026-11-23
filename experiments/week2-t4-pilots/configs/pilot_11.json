@@ -1,0 +1,8 @@
+{
+  "run_id": "pilot-11",
+  "peak_lr": 0.002,
+  "warmup": 0.02,
+  "schedule": "linear",
+  "weight_decay": 0.0,
+  "seed": 42
+}

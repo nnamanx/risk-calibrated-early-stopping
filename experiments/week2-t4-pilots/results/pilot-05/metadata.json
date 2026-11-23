@@ -1,0 +1,25 @@
+{
+  "dataset_revision": "f54c09fd23315a6f9c86f9dc80f725de7d8f9c64",
+  "dataset_hash": "d06c484452cb0625562194b9de13be317eac410e557cf8cd14d7fbb89448f606",
+  "train_tokens_hash": "14296af5f9f0d2b0b5b229572a93c0b565cdb785a7fca5e906cad2110f4de008",
+  "tokenizer_hash": "cb39a3fa1c693e72bbd34c7eb0385aa0915e56ee1612e6b64111028b743ab045",
+  "monitor_windows": 1024,
+  "audit_windows": 4096,
+  "recipe": {
+    "run_id": "pilot-05",
+    "peak_lr": 0.0001,
+    "warmup": 0.02,
+    "schedule": "linear",
+    "weight_decay": 0.0,
+    "seed": 42
+  },
+  "total_steps": 2048,
+  "tokens_per_update": 16384,
+  "parameter_count": 5310720,
+  "precision": "FP32",
+  "gpu": "Tesla T4",
+  "jax_version": "0.11.1",
+  "optax_version": "0.2.8",
+  "script_hash": "86a9319ddf94f1250a2f9d4424d3ad03a9b6ad755a29fea0e62c77de02a9807b",
+  "model_code_hash": "4d2d8fd3f2b3f9101db3e5a37cc459baf47805b5daad549d1f2b2ba3fb749183"
+}
